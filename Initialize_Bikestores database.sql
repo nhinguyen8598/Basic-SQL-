@@ -59,17 +59,7 @@ CREATE TABLE [production].[products] (
 );
 
 
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[sales].[contacts]') AND type in (N'U'))
-DROP TABLE [sales].[contacts]
-GO
 
-CREATE TABLE [sales].[contacts](
-    [contact_id] INT IDENTITY(1,1) NOT NULL,
-    [first_name] NVARCHAR(100) NOT NULL,
-    [last_name] NVARCHAR(100) NOT NULL,
-    [email] NVARCHAR(255) NOT NULL,
-    CONSTRAINT [PK_contacts] PRIMARY KEY ([contact_id])
-);
 
 
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[sales].[customers]') AND type in (N'U'))
